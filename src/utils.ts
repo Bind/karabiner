@@ -1,4 +1,4 @@
-import { To, KeyCode, Manipulator, KarabinerRules } from "./types";
+import type { To, KeyCode, Manipulator, KarabinerRules } from "./types";
 
 /**
  * Custom way to describe a command in a layer
@@ -160,20 +160,6 @@ export function open(what: string): LayerCommand {
       },
     ],
     description: `Open ${what}`,
-  };
-}
-
-/**
- * Shortcut for managing window sizing with Rectangle
- */
-export function rectangle(name: string): LayerCommand {
-  return {
-    to: [
-      {
-        shell_command: `open -g rectangle://execute-action?name=${name}`,
-      },
-    ],
-    description: `Window: ${name}`,
   };
 }
 
